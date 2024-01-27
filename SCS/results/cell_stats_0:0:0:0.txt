@@ -1,0 +1,4 @@
+Number of cells: 890
+Patch size (spots x spots): 1200 x 1200
+Average cell size (spots): 914.1067415730337
+Standard deviation of cell sizes: 545.9645694348185
