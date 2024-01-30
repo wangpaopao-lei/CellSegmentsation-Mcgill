@@ -41,11 +41,8 @@ if __name__=="__main__":
 
     # 第二步：计算每个细胞核的加权质心、总基因表达
     unique_cells = np.unique(task2_result[:, 3])
-    # 创建 cell 质心的空字典
-    centroids = {cell: [0, 0, 0] for cell in unique_cells if cell != 0} 
-    # 创建  cell 总基因表达的空字典
+    centroids = {cell: [0, 0, 0] for cell in unique_cells if cell != 0}  # 排除背景
     nucleus_expression = {cell: np.zeros(all_exp_merged_bins.shape[1]) for cell in centroids if cell != 0}
-    # 创建 cell 像素个数的空字典
     nucleus_pixel_count = {cell: 0 for cell in centroids if cell != 0}
 
     for cell in unique_cells:
