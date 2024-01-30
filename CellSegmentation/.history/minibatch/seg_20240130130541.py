@@ -2,7 +2,6 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
-from PIL import Image
 
 def angle_between(v1, v2):
     """计算两个向量之间的角度"""
@@ -26,8 +25,7 @@ def similarity_expression_vectors(cell, x, y, R):
     point_expression_noisy = point_expression + noise
 
     # 计算皮尔逊相关系数
-    correlation, p_value = spearmanr(cell_expression_noisy, point_expression_noisy)
-
+    correlation = spearmanr(cell_expression_noisy, point_expression_noisy)[0, 1]
 
     return correlation ** R
 
@@ -75,12 +73,12 @@ if __name__=="__main__":
             nucleus_expression[cell] += all_exp_merged_bins[idx, :]
             nucleus_pixel_count[cell] += 1
 
-    # # 提取 X 和 Y 坐标
-    # x_coords = [centroids[cell][0] for cell in centroids]
-    # y_coords = [centroids[cell][1] for cell in centroids]
+    # 提取 X 和 Y 坐标
+    x_coords = [centroids[cell][0] for cell in centroids]
+    y_coords = [centroids[cell][1] for cell in centroids]
 
-    # print(x_coords)
-    # print(y_coords)
+    print(x_coords)
+    print(y_coords)
     
     # 归一化细胞核的基因表达向量
     for cell in nucleus_expression:
@@ -157,11 +155,6 @@ if __name__=="__main__":
     plt.imshow(segmentation_image)
     plt.axis('off')  # 不显示坐标轴
     plt.savefig('results/final_result.png', bbox_inches='tight', pad_inches=0)
-    # # 将 NumPy 数组转换为 PIL 图像
-    # segmentation_pil = Image.fromarray(segmentation_image)
-
-    # # 保存图像
-    # segmentation_pil.save('results/final_result.png')
 
 
     # 提取每个细胞核的大小（即像素个数）
