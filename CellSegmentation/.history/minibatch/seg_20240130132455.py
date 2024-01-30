@@ -2,7 +2,6 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 from scipy.stats import spearmanr
-from PIL import Image
 
 def angle_between(v1, v2):
     """计算两个向量之间的角度"""
@@ -157,11 +156,6 @@ if __name__=="__main__":
     plt.imshow(segmentation_image)
     plt.axis('off')  # 不显示坐标轴
     plt.savefig('results/final_result.png', bbox_inches='tight', pad_inches=0)
-    # # 将 NumPy 数组转换为 PIL 图像
-    # segmentation_pil = Image.fromarray(segmentation_image)
-
-    # # 保存图像
-    # segmentation_pil.save('results/final_result.png')
 
 
     # 提取每个细胞核的大小（即像素个数）

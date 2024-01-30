@@ -79,7 +79,7 @@ for i, (x, y) in enumerate(task1_result[:, :2].astype(int)):
 task2_result = np.hstack((task1_result[:, :3], final_labels_flat.reshape(-1, 1)))
 
 # 输出结果，保留概率值在第三列，细胞核标签在第四列
-np.savetxt('results/task2_result.txt', task2_result, fmt='%f')
+np.savetxt('results/task2_result_with_probabilities.txt', task2_result, fmt='%f')
 
 
 

@@ -152,16 +152,16 @@ if __name__=="__main__":
         # 逐个像素点设置颜色，交换x和y的位置
         for xi, yi in zip(x, y):
             segmentation_image[xi, yi] = colors[cell_index][:3] * 255
-    # 显示和保存图像
-    plt.figure()
-    plt.imshow(segmentation_image)
-    plt.axis('off')  # 不显示坐标轴
-    plt.savefig('results/final_result.png', bbox_inches='tight', pad_inches=0)
-    # # 将 NumPy 数组转换为 PIL 图像
-    # segmentation_pil = Image.fromarray(segmentation_image)
+    # # 显示和保存图像
+    # plt.figure()
+    # plt.imshow(segmentation_image)
+    # plt.axis('off')  # 不显示坐标轴
+    # plt.savefig('results/final_result.png', bbox_inches='tight', pad_inches=0)
+    # 将 NumPy 数组转换为 PIL 图像
+    segmentation_pil = Image.fromarray(segmentation_image)
 
-    # # 保存图像
-    # segmentation_pil.save('results/final_result.png')
+    # 保存图像
+    segmentation_pil.save('results/final_result.png')
 
 
     # 提取每个细胞核的大小（即像素个数）
