@@ -40,9 +40,6 @@ def similarity_expression_vectors(cell, exp,x, y, R):
     correlation, p_value = spearmanr(cell_expression, point_expression_noisy)
     # correlation, p_value = pearsonr(cell_expression_noisy, point_expression_noisy)
 
-    if correlation <= 0:
-        correlation = 1e-15
-
 
     return correlation ** R
 

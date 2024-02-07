@@ -13,35 +13,21 @@ def angle_between(v1, v2):
     return angle
 
 def similarity_expression_vectors(cell, exp,x, y, R):
-    idx = int(math.floor(x+800) * math.ceil(patchsizey) + math.floor(y))
+    idx = int(math.floor(x) * math.ceil(patchsizey) + math.floor(y))
     point_expression = exp[idx, :]
-    
-    # t1
-    # non_zero_elements = point_expression[point_expression != 0]
 
-    # 打印非零项
-    # print(non_zero_elements)
     # 使用之前计算的细胞核表达数据
     cell_expression = nucleus_expression[cell]
 
-    # # t1
-    # non_zero_elements = cell_expression[cell_expression != 0]
-
-    # # 打印非零项
-    # print(non_zero_elements)
-    
     # 计算相似性
     # 添加微小的噪声来避免完全的零向量
-    noise = np.random.normal(0, 1e-13, len(cell_expression))
+    noise = np.random.normal(0, 1e-10, len(cell_expression))
     # noise=0
-    # cell_expression = cell_expression + noise
+    cell_expression_noisy = cell_expression + noise
     point_expression_noisy = point_expression + noise
 
-    correlation, p_value = spearmanr(cell_expression, point_expression_noisy)
-    # correlation, p_value = pearsonr(cell_expression_noisy, point_expression_noisy)
-
-    if correlation <= 0:
-        correlation = 1e-15
+    # correlation, p_value = spearmanr(cell_expression_noisy, point_expression_noisy)
+    correlation, p_value = pearsonr(cell_expression_noisy, point_expression_noisy)
 
 
     return correlation ** R
@@ -54,7 +40,7 @@ if __name__=="__main__":
     patchsizey=1200
     # 第一步：读取 task2_result 数据
     task2_result = np.loadtxt('results/task2_result.txt')
-    
+
 
     # 第二步：计算每个细胞核的加权质心、总基因表达
     unique_cells = np.unique(task2_result[:, 3])
@@ -64,7 +50,6 @@ if __name__=="__main__":
     nucleus_expression = {cell: np.zeros(all_exp_merged_bins.shape[1]) for cell in centroids if cell != 0}
     # 创建 cell 像素个数的空字典
     nucleus_pixel_count = {cell: 0 for cell in centroids if cell != 0}
-
 
     for cell in unique_cells:
         if cell == 0:
@@ -82,12 +67,12 @@ if __name__=="__main__":
         
         # 计算细胞核的总基因表达向量
         for xi, yi in zip(x, y):
-            idx = int(math.floor(xi+800) * math.ceil(patchsizey) + math.floor(yi))
+            idx = int(math.floor(xi) * math.ceil(patchsizey) + math.floor(yi))
             nucleus_expression[cell] += all_exp_merged_bins[idx, :]
             
         # 对于每个细胞核，累加其所有像素点的基因表达向量，并计算像素点数
         for xi, yi in zip(x, y):
-            idx = int(math.floor(xi+800) * math.ceil(patchsizey) + math.floor(yi))
+            idx = int(math.floor(xi) * math.ceil(patchsizey) + math.floor(yi))
             nucleus_expression[cell] += all_exp_merged_bins[idx, :]
             nucleus_pixel_count[cell] += 1
 
@@ -125,11 +110,6 @@ if __name__=="__main__":
 
         # 过滤距离超过max_radius的细胞核
         valid_indices = distances < max_radius
-        
-        if np.sum(valid_indices)==0:
-            task2_result[i,3]=0
-            continue
-        
         valid_field_vectors = field_vectors[valid_indices]
         valid_centroids = [c for c, dist in zip(centroids, valid_indices) if dist]
 
@@ -141,15 +121,9 @@ if __name__=="__main__":
             similarity_measure = similarity_expression_vectors(c,all_exp_merged_bins, x, y, R)
             
             sim.append(similarity_measure)
-            # print(np.sum(nucleus_expression[c]))
-            
-            # idx = int(math.floor(x) * math.ceil(patchsizey) + math.floor(y))
-            # print(np.sum(all_exp_merged_bins[idx, :]))
             
             weighted_vector = weight_factor * similarity_measure * vec
             field_vectors.append(weighted_vector)
-        
-        #t2
         print(sim)
         # 转换为NumPy数组
         field_vectors = np.array(field_vectors)

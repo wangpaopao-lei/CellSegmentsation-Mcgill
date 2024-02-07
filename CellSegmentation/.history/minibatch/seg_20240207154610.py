@@ -1,7 +1,7 @@
 import numpy as np
 import math
 import matplotlib.pyplot as plt
-from scipy.stats import spearmanr,pearsonr
+from scipy.stats import spearmanr
 from PIL import Image
 
 def angle_between(v1, v2):
@@ -12,36 +12,21 @@ def angle_between(v1, v2):
     angle = np.arccos(dot_product)
     return angle
 
-def similarity_expression_vectors(cell, exp,x, y, R):
-    idx = int(math.floor(x+800) * math.ceil(patchsizey) + math.floor(y))
-    point_expression = exp[idx, :]
-    
-    # t1
-    # non_zero_elements = point_expression[point_expression != 0]
+def similarity_expression_vectors(cell, x, y, R):
+    idx = int(math.floor(x) * math.ceil(patchsizey) + math.floor(y))
+    point_expression = all_exp_merged_bins[idx, :]
 
-    # 打印非零项
-    # print(non_zero_elements)
     # 使用之前计算的细胞核表达数据
     cell_expression = nucleus_expression[cell]
 
-    # # t1
-    # non_zero_elements = cell_expression[cell_expression != 0]
-
-    # # 打印非零项
-    # print(non_zero_elements)
-    
     # 计算相似性
     # 添加微小的噪声来避免完全的零向量
-    noise = np.random.normal(0, 1e-13, len(cell_expression))
-    # noise=0
-    # cell_expression = cell_expression + noise
+    noise = np.random.normal(0, 1e-9, len(cell_expression))
+    cell_expression_noisy = cell_expression + noise
     point_expression_noisy = point_expression + noise
 
-    correlation, p_value = spearmanr(cell_expression, point_expression_noisy)
-    # correlation, p_value = pearsonr(cell_expression_noisy, point_expression_noisy)
-
-    if correlation <= 0:
-        correlation = 1e-15
+    # 计算皮尔逊相关系数
+    correlation, p_value = spearmanr(cell_expression_noisy, point_expression_noisy)
 
 
     return correlation ** R
@@ -54,7 +39,7 @@ if __name__=="__main__":
     patchsizey=1200
     # 第一步：读取 task2_result 数据
     task2_result = np.loadtxt('results/task2_result.txt')
-    
+
 
     # 第二步：计算每个细胞核的加权质心、总基因表达
     unique_cells = np.unique(task2_result[:, 3])
@@ -64,7 +49,6 @@ if __name__=="__main__":
     nucleus_expression = {cell: np.zeros(all_exp_merged_bins.shape[1]) for cell in centroids if cell != 0}
     # 创建 cell 像素个数的空字典
     nucleus_pixel_count = {cell: 0 for cell in centroids if cell != 0}
-
 
     for cell in unique_cells:
         if cell == 0:
@@ -82,12 +66,12 @@ if __name__=="__main__":
         
         # 计算细胞核的总基因表达向量
         for xi, yi in zip(x, y):
-            idx = int(math.floor(xi+800) * math.ceil(patchsizey) + math.floor(yi))
+            idx = int(math.floor(xi) * math.ceil(patchsizey) + math.floor(yi))
             nucleus_expression[cell] += all_exp_merged_bins[idx, :]
             
         # 对于每个细胞核，累加其所有像素点的基因表达向量，并计算像素点数
         for xi, yi in zip(x, y):
-            idx = int(math.floor(xi+800) * math.ceil(patchsizey) + math.floor(yi))
+            idx = int(math.floor(xi) * math.ceil(patchsizey) + math.floor(yi))
             nucleus_expression[cell] += all_exp_merged_bins[idx, :]
             nucleus_pixel_count[cell] += 1
 
@@ -110,7 +94,6 @@ if __name__=="__main__":
     max_radius = 28.5  # 设置最大的细胞核半径
 
     total_field_magnitudes = []
-    
     for i, (x, y, prob, cell) in enumerate(task2_result):
         # if prob <= background_threshold or cell != 0:
         #     continue
@@ -120,38 +103,21 @@ if __name__=="__main__":
         field_vectors = np.array([np.array(centroids[c][:2]) - np.array([x, y]) for c in centroids])
         distances = np.linalg.norm(field_vectors, axis=1)
 
-        # 现在可以正确执行除法操作，因为 distances 能够广播到 field_vectors 的每一行
-        normalized_field_vectors = field_vectors / distances.reshape(-1, 1)
-
         # 过滤距离超过max_radius的细胞核
         valid_indices = distances < max_radius
-        
-        if np.sum(valid_indices)==0:
-            task2_result[i,3]=0
-            continue
-        
         valid_field_vectors = field_vectors[valid_indices]
         valid_centroids = [c for c, dist in zip(centroids, valid_indices) if dist]
-
+        print(valid_indices)
         # 计算场力向量
-        field_vectors=[]
-        sim=[]
         for c, vec, dist in zip(valid_centroids, valid_field_vectors, distances[valid_indices]):
+            vec_normalized = vec / np.linalg.norm(vec)  # 规范化vec
             weight_factor = 1 / dist**2
-            similarity_measure = similarity_expression_vectors(c,all_exp_merged_bins, x, y, R)
+            similarity_measure = similarity_expression_vectors(c, x, y, R)
             
-            sim.append(similarity_measure)
-            # print(np.sum(nucleus_expression[c]))
-            
-            # idx = int(math.floor(x) * math.ceil(patchsizey) + math.floor(y))
-            # print(np.sum(all_exp_merged_bins[idx, :]))
+            print(similarity_measure)
             
             weighted_vector = weight_factor * similarity_measure * vec
             field_vectors.append(weighted_vector)
-        
-        #t2
-        print(sim)
-        # 转换为NumPy数组
         field_vectors = np.array(field_vectors)
         # print(field_vectors)
         # 计算合力向量
@@ -167,8 +133,6 @@ if __name__=="__main__":
             angles = [angle_between(total_field_vector, vec) for vec in valid_field_vectors]
             closest_cell_index = np.argmin(angles)
             task2_result[i, 3] = valid_centroids[closest_cell_index]
-
-
 
     # 更新结果
     np.savetxt('results/updated_task2_result.txt', task2_result, fmt='%d')

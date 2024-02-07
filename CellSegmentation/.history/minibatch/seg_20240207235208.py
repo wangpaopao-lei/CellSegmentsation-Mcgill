@@ -16,32 +16,29 @@ def similarity_expression_vectors(cell, exp,x, y, R):
     idx = int(math.floor(x+800) * math.ceil(patchsizey) + math.floor(y))
     point_expression = exp[idx, :]
     
-    # t1
+    # # t1
     # non_zero_elements = point_expression[point_expression != 0]
 
-    # 打印非零项
+    # # 打印非零项
     # print(non_zero_elements)
     # 使用之前计算的细胞核表达数据
     cell_expression = nucleus_expression[cell]
 
-    # # t1
-    # non_zero_elements = cell_expression[cell_expression != 0]
+    # t1
+    non_zero_elements = cell_expression[cell_expression != 0]
 
-    # # 打印非零项
-    # print(non_zero_elements)
+    # 打印非零项
+    print(non_zero_elements)
     
     # 计算相似性
     # 添加微小的噪声来避免完全的零向量
-    noise = np.random.normal(0, 1e-13, len(cell_expression))
+    noise = np.random.normal(0, 1e-10, len(cell_expression))
     # noise=0
-    # cell_expression = cell_expression + noise
+    cell_expression_noisy = cell_expression + noise
     point_expression_noisy = point_expression + noise
 
-    correlation, p_value = spearmanr(cell_expression, point_expression_noisy)
+    correlation, p_value = spearmanr(cell_expression_noisy, point_expression_noisy)
     # correlation, p_value = pearsonr(cell_expression_noisy, point_expression_noisy)
-
-    if correlation <= 0:
-        correlation = 1e-15
 
 
     return correlation ** R
@@ -150,7 +147,7 @@ if __name__=="__main__":
             field_vectors.append(weighted_vector)
         
         #t2
-        print(sim)
+        # print(sim)
         # 转换为NumPy数组
         field_vectors = np.array(field_vectors)
         # print(field_vectors)
