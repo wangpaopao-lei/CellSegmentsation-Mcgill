@@ -180,7 +180,6 @@ if __name__=="__main__":
             max_weight_factor = 0  # 初始化最大的加权向量
             max_similarity_measure = 0  # 初始化对应的最大相似性度量
             max_weighted_vector_magnitude = 0
-            current_magnitude=0
             for c, vec, dist in zip(valid_centroids, valid_field_vectors, distances[valid_indices]):
                 weight_factor = 1 / dist**2
                 similarity_measure = similarity_expression_vectors(c,all_exp_merged_bins, x, y, R)

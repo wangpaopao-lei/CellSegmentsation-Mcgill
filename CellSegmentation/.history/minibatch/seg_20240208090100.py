@@ -105,7 +105,7 @@ if __name__=="__main__":
 
     # 第三步：场分割的细胞分割
     background_threshold = 0  # 概率小于此值的点视为背景点
-    cell_threshold = 0.00001  # 合力大于此值的点视为细胞点
+    cell_threshold = 0.00015  # 合力大于此值的点视为细胞点
     R=1
     max_radius = 28.5  # 设置最大的细胞核半径
 
@@ -117,11 +117,11 @@ if __name__=="__main__":
         if cell != 0:
             continue
         # 使用NumPy数组来执行元素级的减法
-        spot2centroid = np.array([np.array(centroids[c][:2]) - np.array([x, y]) for c in centroids])
-        distances = np.linalg.norm(spot2centroid, axis=1)
+        field_vectors = np.array([np.array(centroids[c][:2]) - np.array([x, y]) for c in centroids])
+        distances = np.linalg.norm(field_vectors, axis=1)
 
         # 现在可以正确执行除法操作，因为 distances 能够广播到 field_vectors 的每一行
-        normalized_field_vectors = spot2centroid / distances.reshape(-1, 1)
+        normalized_field_vectors = field_vectors / distances.reshape(-1, 1)
 
         # 过滤距离超过max_radius的细胞核
         valid_indices = distances < max_radius
@@ -136,7 +136,6 @@ if __name__=="__main__":
         # 计算场力向量
         field_vectors=[]
         sim=[]
-        mt1=0
         for c, vec, dist in zip(valid_centroids, valid_field_vectors, distances[valid_indices]):
             weight_factor = 1 / dist**2
             similarity_measure = similarity_expression_vectors(c,all_exp_merged_bins, x, y, R)
@@ -148,14 +147,11 @@ if __name__=="__main__":
             # print(np.sum(all_exp_merged_bins[idx, :]))
             
             weighted_vector = weight_factor * similarity_measure * vec
-            cmt1=np.linalg.norm(weighted_vector)
-            if cmt1>mt1:
-                mt1=cmt1
             field_vectors.append(weighted_vector)
         
         #t2
         # print(sim)
-        # 提取最大力
+        # 转换为NumPy数组
         field_vectors = np.array(field_vectors)
         field_magnitudes = np.linalg.norm(field_vectors, axis=1)
         max_field_magnitude = np.max(field_magnitudes)
@@ -176,11 +172,10 @@ if __name__=="__main__":
             
         
         # t2
-        if task2_result[i, 3]==94:
+        if task2_result[i, 3]==161:
             max_weight_factor = 0  # 初始化最大的加权向量
             max_similarity_measure = 0  # 初始化对应的最大相似性度量
             max_weighted_vector_magnitude = 0
-            current_magnitude=0
             for c, vec, dist in zip(valid_centroids, valid_field_vectors, distances[valid_indices]):
                 weight_factor = 1 / dist**2
                 similarity_measure = similarity_expression_vectors(c,all_exp_merged_bins, x, y, R)
@@ -192,9 +187,7 @@ if __name__=="__main__":
                     max_weighted_vector_magnitude = current_magnitude
                     max_weight_factor = weight_factor
                     max_similarity_measure = similarity_measure
-            if cell_threshold<max_field_magnitude<cell_threshold+0.00001:
-                print(cmt1)
-                print(max_weighted_vector_magnitude)
+            if cell_threshold<max_field_magnitude<cell_threshold+0.00005:
                 print(f"heli:{max_field_magnitude} \t dis:{max_weight_factor} \t sim:{max_similarity_measure}")
              
         
