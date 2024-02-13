@@ -38,7 +38,7 @@ def similarity_expression_vectors(cell, exp,x, y, R):
     point_expression_noisy = point_expression + noise
 
     correlation, p_value = spearmanr(cell_expression, point_expression_noisy)
-    # correlation, p_value = pearsonr(cell_expression, point_expression_noisy)
+    # correlation, p_value = pearsonr(cell_expression_noisy, point_expression_noisy)
 
     if correlation <= 0:
         correlation = 1e-15
@@ -105,7 +105,7 @@ if __name__=="__main__":
 
     # 第三步：场分割的细胞分割
     background_threshold = 0  # 概率小于此值的点视为背景点
-    cell_threshold = 0.00001  # 合力大于此值的点视为细胞点
+    cell_threshold = 0.035  # 合力大于此值的点视为细胞点
     R=1
     max_radius = 28.5  # 设置最大的细胞核半径
 
@@ -117,11 +117,11 @@ if __name__=="__main__":
         if cell != 0:
             continue
         # 使用NumPy数组来执行元素级的减法
-        spot2centroid = np.array([np.array(centroids[c][:2]) - np.array([x, y]) for c in centroids])
-        distances = np.linalg.norm(spot2centroid, axis=1)
+        field_vectors = np.array([np.array(centroids[c][:2]) - np.array([x, y]) for c in centroids])
+        distances = np.linalg.norm(field_vectors, axis=1)
 
         # 现在可以正确执行除法操作，因为 distances 能够广播到 field_vectors 的每一行
-        normalized_field_vectors = spot2centroid / distances.reshape(-1, 1)
+        normalized_field_vectors = field_vectors / distances.reshape(-1, 1)
 
         # 过滤距离超过max_radius的细胞核
         valid_indices = distances < max_radius
@@ -130,13 +130,12 @@ if __name__=="__main__":
             task2_result[i,3]=0
             continue
         
-        valid_field_vectors = normalized_field_vectors[valid_indices]
+        valid_field_vectors = field_vectors[valid_indices]
         valid_centroids = [c for c, dist in zip(centroids, valid_indices) if dist]
 
         # 计算场力向量
         field_vectors=[]
         sim=[]
-        mt1=0
         for c, vec, dist in zip(valid_centroids, valid_field_vectors, distances[valid_indices]):
             weight_factor = 1 / dist**2
             similarity_measure = similarity_expression_vectors(c,all_exp_merged_bins, x, y, R)
@@ -148,17 +147,12 @@ if __name__=="__main__":
             # print(np.sum(all_exp_merged_bins[idx, :]))
             
             weighted_vector = weight_factor * similarity_measure * vec
-            cmt1=np.linalg.norm(weighted_vector)
-            if cmt1>mt1:
-                mt1=cmt1
             field_vectors.append(weighted_vector)
         
         #t2
         # print(sim)
-        # 提取最大力
+        # 转换为NumPy数组
         field_vectors = np.array(field_vectors)
-        field_magnitudes = np.linalg.norm(field_vectors, axis=1)
-        max_field_magnitude = np.max(field_magnitudes)
         # print(field_vectors)
         # 计算合力向量
         total_field_vector = np.sum(field_vectors, axis=0)
@@ -168,36 +162,11 @@ if __name__=="__main__":
 
 
         # 判断点的归属
-        if max_field_magnitude > cell_threshold:
+        if np.linalg.norm(total_field_vector) > cell_threshold:
             # 计算合力方向与每个有效场向量方向之间的角度
             angles = [angle_between(total_field_vector, vec) for vec in valid_field_vectors]
             closest_cell_index = np.argmin(angles)
             task2_result[i, 3] = valid_centroids[closest_cell_index]
-            
-        
-        # t2
-        if task2_result[i, 3]==94:
-            max_weight_factor = 0  # 初始化最大的加权向量
-            max_similarity_measure = 0  # 初始化对应的最大相似性度量
-            max_weighted_vector_magnitude = 0
-            current_magnitude=0
-            for c, vec, dist in zip(valid_centroids, valid_field_vectors, distances[valid_indices]):
-                weight_factor = 1 / dist**2
-                similarity_measure = similarity_expression_vectors(c,all_exp_merged_bins, x, y, R)
-                weighted_vector = weight_factor * similarity_measure * vec
-                # 计算当前加权向量的模长
-                current_magnitude = np.linalg.norm(weighted_vector)
-                if current_magnitude > max_weighted_vector_magnitude:
-                    # 更新最大模长及其对应的向量和相似性度量
-                    max_weighted_vector_magnitude = current_magnitude
-                    max_weight_factor = weight_factor
-                    max_similarity_measure = similarity_measure
-            if cell_threshold<max_field_magnitude<cell_threshold+0.00001:
-                print(cmt1)
-                print(max_weighted_vector_magnitude)
-                print(f"heli:{max_field_magnitude} \t dis:{max_weight_factor} \t sim:{max_similarity_measure}")
-             
-        
 
 
 
@@ -227,18 +196,6 @@ if __name__=="__main__":
         # 逐个像素点设置颜色，交换x和y的位置
         for xi, yi in zip(x, y):
             segmentation_image[xi, yi] = colors[cell_index][:3] * 255
-            
-    # 提取每个细胞核的大小（即像素个数）
-    cell_sizes = []
-    for cell in unique_cells:
-        if cell == 0:  # 跳过背景
-            continue
-        mask = task2_result[:, 3] == cell
-        cell_size = np.sum(mask)
-        cell_sizes.append(cell_size)
-    print(f"Average size: {np.mean(cell_sizes)}")
-    
-            
     # 显示和保存图像
     plt.figure()
     plt.imshow(segmentation_image)
@@ -251,7 +208,14 @@ if __name__=="__main__":
     # segmentation_pil.save('results/final_result.png')
 
 
-    
+    # 提取每个细胞核的大小（即像素个数）
+    cell_sizes = []
+    for cell in unique_cells:
+        if cell == 0:  # 跳过背景
+            continue
+        mask = task2_result[:, 3] == cell
+        cell_size = np.sum(mask)
+        cell_sizes.append(cell_size)
     plt.figure()
     # 绘制细胞大小的分布图
     plt.hist(cell_sizes, bins=50, color='blue', alpha=0.7)
@@ -260,7 +224,7 @@ if __name__=="__main__":
     plt.ylabel('Frequency')
     plt.grid(True)
     plt.savefig('fig/cell_size_distribution.png')
-    
+    print(f"Average size: {np.mean(cell_sizes)}")
 
     total_field_magnitudes = np.array(total_field_magnitudes)
     # # 计算统计数据
