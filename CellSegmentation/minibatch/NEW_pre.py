@@ -217,7 +217,7 @@ def prepare_samples(layers, shape, expression_matrix, offsets, threshold, n_neig
                 x_pos.append(pos)
                 x_labels.append(labels)
                 y_train.append(1)
-            elif label == 0:
+            elif label == 0 and distance >= threshold and i%downrs==0 and j%downrs==0:
                 counter_outer += 1
                 x_train_outer.append(samples)
                 x_pos_outer.append(pos)
