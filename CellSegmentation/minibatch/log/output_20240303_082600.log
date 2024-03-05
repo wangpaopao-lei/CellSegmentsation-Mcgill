@@ -1,0 +1,164 @@
+2024-03-03 08:26:07.825961: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 08:26:07.827210: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spaghetti/network.py:40: FutureWarning:
+
+The next major release of pysal/spaghetti (2.0.0) will drop support for all ``libpysal.cg`` geometries. This change is a first step in refactoring ``spaghetti`` that is expected to result in dramatically reduced runtimes for network instantiation and operations. Users currently requiring network and point pattern input as ``libpysal.cg`` geometries should prepare for this simply by converting to ``shapely`` geometries.
+
+2024-03-03 08:26:20.552205: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 08:26:20.553637: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 08:26:20.554345: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 08:26:20.555020: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 08:26:20.555694: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 08:26:20.556628: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 08:26:20.557161: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublas.so.11'; dlerror: libcublas.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 08:26:20.557635: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublasLt.so.11'; dlerror: libcublasLt.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 08:26:20.558088: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcufft.so.10'; dlerror: libcufft.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 08:26:20.565903: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusparse.so.11'; dlerror: libcusparse.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 08:26:20.566375: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2024-03-03 08:26:20.570089: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/ot/backend.py:2998: UserWarning:
+
+To use TensorflowBackend, you need to activate the tensorflow numpy API. You can activate it by running: 
+from tensorflow.python.ops.numpy_ops import np_config
+np_config.enable_numpy_behavior()
+
+|-----> Constructing count matrices.
+|-----> <insert> __type to uns in AnnData Object.
+|-----> <insert> pp to uns in AnnData Object.
+|-----> <insert> spatial to uns in AnnData Object.
+|-----> <select> stain layer in AnnData Object
+|-----> Constructing nuclei mask from staining image.
+|-----> <insert> stain_mask to layers in AnnData Object.
+|-----> <select> stain_mask layer in AnnData Object
+|-----> Finding peaks with minimum distance 7.
+|-----> <insert> stain_distances to layers in AnnData Object.
+|-----> <insert> stain_markers to layers in AnnData Object.
+|-----> <select> stain layer in AnnData Object
+|-----> <select> stain_mask layer in AnnData Object
+|-----> <select> stain_markers layer in AnnData Object
+|-----> Running Watershed.
+|-----> <insert> watershed_labels to layers in AnnData Object.
+|-----> <select> watershed_labels layer in AnnData Object
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/anndata/_core/anndata.py:183: ImplicitModificationWarning:
+
+Transforming to str index.
+
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/anndata/_core/anndata.py:183: ImplicitModificationWarning:
+
+Transforming to str index.
+
+Killed
+第一个脚本已完成运行
+2024-03-03 08:47:55.210541: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-03 08:47:55.210619: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2024-03-03 08:48:55.881125: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 08:48:55.884266: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 08:48:55.884921: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 08:48:55.885492: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 08:48:55.886174: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 08:48:55.886942: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-03 08:48:55.890199: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublas.so.11'; dlerror: libcublas.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-03 08:48:55.890667: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublasLt.so.11'; dlerror: libcublasLt.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-03 08:48:55.891074: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcufft.so.10'; dlerror: libcufft.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-03 08:48:55.901376: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusparse.so.11'; dlerror: libcusparse.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-03 08:48:55.901779: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2024-03-03 08:48:55.902604: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+results folder exists.
+Epoch 1/20
+Epoch 1: Actual Labels: [1 0 1 0 1 1 1 0 1 1 1 0 1 1 1 1 1 1 0 1 0 0 0 1 0 0 1 1 1 0 0 1]
+Epoch 1: Predictions:
+ [[0.78902006]
+ [0.4108026 ]
+ [0.82747495]
+ [0.68604624]
+ [0.71160245]
+ [0.77471125]
+ [0.74559546]
+ [0.75072014]
+ [0.745558  ]
+ [0.6331912 ]
+ [0.32159626]
+ [0.31506187]
+ [0.7239848 ]
+ [0.7460601 ]
+ [0.7717476 ]
+ [0.7246975 ]
+ [0.61210483]
+ [0.6952166 ]
+ [0.69464135]
+ [0.61299574]
+ [0.7869274 ]
+ [0.00646242]
+ [0.8056644 ]
+ [0.83007824]
+ [0.7379643 ]
+ [0.68604624]
+ [0.74858654]
+ [0.7568908 ]
+ [0.80211157]
+ [0.48319376]
+ [0.82333434]
+ [0.7918576 ]]
+404/404 - 24s - loss: 0.6574 - accuracy: 0.6110 - val_loss: 0.6330 - val_accuracy: 0.6606 - 24s/epoch - 61ms/step
+Epoch 2/20
+404/404 - 14s - loss: 0.5970 - accuracy: 0.7085 - val_loss: 0.5728 - val_accuracy: 0.7386 - 14s/epoch - 34ms/step
+Epoch 3/20
+404/404 - 13s - loss: 0.5806 - accuracy: 0.7313 - val_loss: 0.5768 - val_accuracy: 0.7345 - 13s/epoch - 33ms/step
+Epoch 4/20
+404/404 - 14s - loss: 0.5611 - accuracy: 0.7371 - val_loss: 0.4997 - val_accuracy: 0.7698 - 14s/epoch - 34ms/step
+Epoch 5/20
+404/404 - 14s - loss: 0.3199 - accuracy: 0.8677 - val_loss: 0.0841 - val_accuracy: 0.9681 - 14s/epoch - 33ms/step
+Epoch 6/20
+404/404 - 14s - loss: 0.0756 - accuracy: 0.9735 - val_loss: 0.0129 - val_accuracy: 0.9963 - 14s/epoch - 34ms/step
+Epoch 7/20
+404/404 - 14s - loss: 0.0214 - accuracy: 0.9934 - val_loss: 0.0013 - val_accuracy: 1.0000 - 14s/epoch - 34ms/step
+Epoch 8/20
+404/404 - 13s - loss: 0.0497 - accuracy: 0.9860 - val_loss: 0.0054 - val_accuracy: 0.9988 - 13s/epoch - 33ms/step
+Epoch 9/20
+404/404 - 13s - loss: 0.0057 - accuracy: 0.9979 - val_loss: 2.7145e-04 - val_accuracy: 1.0000 - 13s/epoch - 33ms/step
+Epoch 10/20
+404/404 - 13s - loss: 0.0279 - accuracy: 0.9944 - val_loss: 0.0015 - val_accuracy: 1.0000 - 13s/epoch - 31ms/step
+Epoch 11/20
+404/404 - 13s - loss: 0.0065 - accuracy: 0.9981 - val_loss: 1.4896e-04 - val_accuracy: 1.0000 - 13s/epoch - 32ms/step
+Epoch 12/20
+404/404 - 13s - loss: 5.0582e-04 - accuracy: 1.0000 - val_loss: 1.0912e-04 - val_accuracy: 1.0000 - 13s/epoch - 31ms/step
+Epoch 13/20
+404/404 - 13s - loss: 0.0578 - accuracy: 0.9834 - val_loss: 0.0515 - val_accuracy: 0.9848 - 13s/epoch - 31ms/step
+Epoch 14/20
+404/404 - 13s - loss: 0.0037 - accuracy: 0.9989 - val_loss: 1.2223e-04 - val_accuracy: 1.0000 - 13s/epoch - 32ms/step
+Epoch 15/20
+404/404 - 13s - loss: 3.1337e-04 - accuracy: 1.0000 - val_loss: 5.6355e-05 - val_accuracy: 1.0000 - 13s/epoch - 31ms/step
+Epoch 16/20
+404/404 - 13s - loss: 0.0588 - accuracy: 0.9867 - val_loss: 0.0030 - val_accuracy: 0.9991 - 13s/epoch - 31ms/step
+Epoch 17/20
+404/404 - 13s - loss: 0.0028 - accuracy: 0.9992 - val_loss: 4.6037e-04 - val_accuracy: 1.0000 - 13s/epoch - 32ms/step
+Epoch 18/20
+404/404 - 13s - loss: 6.7151e-04 - accuracy: 1.0000 - val_loss: 3.3965e-05 - val_accuracy: 1.0000 - 13s/epoch - 32ms/step
+Epoch 19/20
+404/404 - 13s - loss: 0.0625 - accuracy: 0.9817 - val_loss: 6.8650e-04 - val_accuracy: 1.0000 - 13s/epoch - 33ms/step
+Epoch 20/20
+404/404 - 13s - loss: 0.0060 - accuracy: 0.9982 - val_loss: 1.1940e-04 - val_accuracy: 1.0000 - 13s/epoch - 33ms/step
+Inference on all the spots...
+16.0 in total
+Batch 0 processing...
+Traceback (most recent call last):
+  File "/mnt/md0/lei/projects/CellSegmentsation/CellSegmentation/minibatch/NEW_trans.py", line 426, in <module>
+    train()
+  File "/mnt/md0/lei/projects/CellSegmentsation/CellSegmentation/minibatch/NEW_trans.py", line 399, in train
+    run_experiment(
+  File "/mnt/md0/lei/projects/CellSegmentsation/CellSegmentation/minibatch/NEW_trans.py", line 280, in run_experiment
+    x_test_batch, x_test_pos_batch, x_test_labels_batch = load_batch(
+  File "/mnt/md0/lei/projects/CellSegmentsation/CellSegmentation/minibatch/NEW_trans.py", line 34, in load_batch
+    x_test = data["x_test"][start_idx : start_idx + batch_size].astype(np.float32)
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/numpy/lib/npyio.py", line 253, in __getitem__
+    return format.read_array(bytes,
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/numpy/lib/format.py", line 812, in read_array
+    data = _read_bytes(fp, read_size, "array data")
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/numpy/lib/format.py", line 955, in _read_bytes
+    raise ValueError(msg % (error_template, size, len(data)))
+ValueError: EOF: reading array data, expected 262144 bytes got 0
+第二个脚本已完成运行
