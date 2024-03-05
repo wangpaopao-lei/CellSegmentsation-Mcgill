@@ -1,0 +1,65 @@
+2024-03-03 05:05:12.105724: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 05:05:12.109431: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spaghetti/network.py:40: FutureWarning:
+
+The next major release of pysal/spaghetti (2.0.0) will drop support for all ``libpysal.cg`` geometries. This change is a first step in refactoring ``spaghetti`` that is expected to result in dramatically reduced runtimes for network instantiation and operations. Users currently requiring network and point pattern input as ``libpysal.cg`` geometries should prepare for this simply by converting to ``shapely`` geometries.
+
+2024-03-03 05:05:24.340992: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 05:05:24.341938: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 05:05:24.342644: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 05:05:24.343302: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 05:05:24.343959: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-03 05:05:24.344858: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 05:05:24.347934: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublas.so.11'; dlerror: libcublas.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 05:05:24.348766: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublasLt.so.11'; dlerror: libcublasLt.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 05:05:24.349341: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcufft.so.10'; dlerror: libcufft.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 05:05:24.356098: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusparse.so.11'; dlerror: libcusparse.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-03 05:05:24.356617: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2024-03-03 05:05:24.357715: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/ot/backend.py:2998: UserWarning:
+
+To use TensorflowBackend, you need to activate the tensorflow numpy API. You can activate it by running: 
+from tensorflow.python.ops.numpy_ops import np_config
+np_config.enable_numpy_behavior()
+
+|-----> Constructing count matrices.
+|-----> <insert> __type to uns in AnnData Object.
+|-----> <insert> pp to uns in AnnData Object.
+|-----> <insert> spatial to uns in AnnData Object.
+|-----> <select> stain layer in AnnData Object
+|-----> Constructing nuclei mask from staining image.
+|-----> <insert> stain_mask to layers in AnnData Object.
+|-----> <select> stain_mask layer in AnnData Object
+|-----> Finding peaks with minimum distance 7.
+|-----> <insert> stain_distances to layers in AnnData Object.
+|-----> <insert> stain_markers to layers in AnnData Object.
+|-----> <select> stain layer in AnnData Object
+|-----> <select> stain_mask layer in AnnData Object
+|-----> <select> stain_markers layer in AnnData Object
+|-----> Running Watershed.
+|-----> <insert> watershed_labels to layers in AnnData Object.
+|-----> <select> watershed_labels layer in AnnData Object
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/anndata/_core/anndata.py:183: ImplicitModificationWarning:
+
+Transforming to str index.
+
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/anndata/_core/anndata.py:183: ImplicitModificationWarning:
+
+Transforming to str index.
+
+Killed
+第一个脚本已完成运行
+2024-03-03 05:52:15.997255: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-03 05:52:15.997315: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+results folder exists.
+Traceback (most recent call last):
+  File "/mnt/md0/lei/projects/CellSegmentsation/CellSegmentation/minibatch/NEW_trans.py", line 426, in <module>
+    train()
+  File "/mnt/md0/lei/projects/CellSegmentsation/CellSegmentation/minibatch/NEW_trans.py", line 332, in train
+    x_train_pos_ = np.load("dataset/x_train_pos.npz", allow_pickle=True)
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/numpy/lib/npyio.py", line 405, in load
+    fid = stack.enter_context(open(os_fspath(file), "rb"))
+FileNotFoundError: [Errno 2] No such file or directory: 'dataset/x_train_pos.npz'
+第二个脚本已完成运行
