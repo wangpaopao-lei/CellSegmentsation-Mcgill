@@ -196,7 +196,6 @@ def prepare_samples(layers, shape, expression_matrix, offsets, threshold, n_neig
     x_train, x_pos, x_labels, y_train = [], [], [], []
     x_train_outer, x_pos_outer, x_labels_outer, y_train_outer = [], [], [], []
     x_test, x_test_pos, x_test_labels = [], [], []
-    x_test_tmp=[]
     counter_core, counter_outer = 0, 0  # 计数器
     for i in range(shape[0]):
         if (i + 1) % 100 == 0:
@@ -218,18 +217,14 @@ def prepare_samples(layers, shape, expression_matrix, offsets, threshold, n_neig
                 x_pos.append(pos)
                 x_labels.append(labels)
                 y_train.append(1)
-            elif label == 0 and distance >= threshold and i%downrs==0 and j%downrs==0:
+            elif label == 0:
                 counter_outer += 1
                 x_train_outer.append(samples)
                 x_pos_outer.append(pos)
                 x_labels_outer.append(labels)
                 y_train_outer.append(0)
-            
-            
-            x_test_tmp.append(samples)
-            if len(x_test_tmp)>500:
-                x_test.extend(x_test_tmp)
-                x_test_tmp=[]
+
+            x_test.append(samples)
             x_test_pos.append(pos)
             x_test_labels.append(labels)
 
