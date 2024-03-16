@@ -1,8 +1,0 @@
-第一个脚本已完成运行
-第二个脚本已完成运行
-/mnt/md0/lei/CellSegmentation/display.py:6: UserWarning: loadtxt: input contained no data: "results/spot_prediction_0:0:0:0.txt"
-  data = np.loadtxt(file_path, delimiter='\t')
-Traceback (most recent call last):
-  File "/mnt/md0/lei/CellSegmentation/display.py", line 9, in <module>
-    x = data[:, 0].astype(int)
-IndexError: too many indices for array: array is 1-dimensional, but 2 were indexed

@@ -1,0 +1,1 @@
+nohup /home/lei/miniconda3/envs/CS/bin/python /mnt/md0/lei/projects/CellSegmentsation/CellSegmentation/src/NEW_seg.py > log/output_$(date +"%Y%m%d_%H%M%S").log 2>&1 &

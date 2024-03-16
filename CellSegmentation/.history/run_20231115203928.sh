@@ -1,1 +1,0 @@
-nohup ./pre_and_nuclei.sh > log/output.log 2>&1 &

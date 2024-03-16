@@ -1,0 +1,618 @@
+2024-03-06 14:04:28.003325: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-06 14:04:28.004133: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spaghetti/network.py:40: FutureWarning:
+
+The next major release of pysal/spaghetti (2.0.0) will drop support for all ``libpysal.cg`` geometries. This change is a first step in refactoring ``spaghetti`` that is expected to result in dramatically reduced runtimes for network instantiation and operations. Users currently requiring network and point pattern input as ``libpysal.cg`` geometries should prepare for this simply by converting to ``shapely`` geometries.
+
+2024-03-06 14:04:32.080278: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-06 14:04:32.080816: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-06 14:04:32.081201: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-06 14:04:32.081569: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-06 14:04:32.081934: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-06 14:04:32.082558: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-06 14:04:32.082697: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublas.so.11'; dlerror: libcublas.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-06 14:04:32.082823: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublasLt.so.11'; dlerror: libcublasLt.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-06 14:04:32.082949: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcufft.so.10'; dlerror: libcufft.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-06 14:04:32.084060: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusparse.so.11'; dlerror: libcusparse.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-06 14:04:32.084129: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2024-03-06 14:04:32.084518: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/ot/backend.py:2998: UserWarning:
+
+To use TensorflowBackend, you need to activate the tensorflow numpy API. You can activate it by running: 
+from tensorflow.python.ops.numpy_ops import np_config
+np_config.enable_numpy_behavior()
+
+|-----> Constructing count matrices.
+|-----> <insert> __type to uns in AnnData Object.
+|-----> <insert> pp to uns in AnnData Object.
+|-----> <insert> spatial to uns in AnnData Object.
+|-----> <select> stain layer in AnnData Object
+|-----> Constructing nuclei mask from staining image.
+|-----> <insert> stain_mask to layers in AnnData Object.
+|-----> <select> stain_mask layer in AnnData Object
+|-----> Finding peaks with minimum distance 7.
+|-----> <insert> stain_distances to layers in AnnData Object.
+|-----> <insert> stain_markers to layers in AnnData Object.
+|-----> <select> stain layer in AnnData Object
+|-----> <select> stain_mask layer in AnnData Object
+|-----> <select> stain_markers layer in AnnData Object
+|-----> Running Watershed.
+|-----> <insert> watershed_labels to layers in AnnData Object.
+|-----> <select> watershed_labels layer in AnnData Object
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/anndata/_core/anndata.py:183: ImplicitModificationWarning:
+
+Transforming to str index.
+
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/anndata/_core/anndata.py:183: ImplicitModificationWarning:
+
+Transforming to str index.
+
+watershed labels prepared.
+(1200, 1200, 2000)
+gene data prepared.
+batch folder exists
+finished 8%
+finished 17%
+finished 25%
+finished 33%
+finished 42%
+finished 50%
+finished 58%
+finished 67%
+finished 75%
+finished 83%
+finished 92%
+finished 100%
+Core samples: 16952, Outer samples: 320161
+done!
+第一个脚本已完成运行
+2024-03-06 15:12:54.680762: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-06 15:12:54.680829: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+2024-03-06 15:13:32.731559: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-06 15:13:32.731983: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-06 15:13:32.732305: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-06 15:13:32.732631: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-06 15:13:32.732947: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-06 15:13:32.733322: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-06 15:13:32.733406: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublas.so.11'; dlerror: libcublas.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-06 15:13:32.733506: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublasLt.so.11'; dlerror: libcublasLt.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-06 15:13:32.733592: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcufft.so.10'; dlerror: libcufft.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-06 15:13:32.734348: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusparse.so.11'; dlerror: libcusparse.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /usr/local/cuda-12.1/lib64:
+2024-03-06 15:13:32.734388: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2024-03-06 15:13:32.734644: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+results folder exists.
+Epoch 1/20
+Epoch 1: Actual Labels: [0 1 0 1 1 0 1 0 1 0 0 1 1 1 0 1 1 1 1 1 0 0 1 0 0 0 0 1 0 0 1 0]
+Epoch 1: Predictions:
+ [[0.505929  ]
+ [0.45322302]
+ [0.4528962 ]
+ [0.4496048 ]
+ [0.18262464]
+ [0.5386914 ]
+ [0.59542084]
+ [0.45121977]
+ [0.6188495 ]
+ [0.47494346]
+ [0.4805867 ]
+ [0.5058511 ]
+ [0.47853407]
+ [0.44785914]
+ [0.59492415]
+ [0.66497636]
+ [0.64718825]
+ [0.57880884]
+ [0.4904892 ]
+ [0.64194286]
+ [0.61068124]
+ [0.6429484 ]
+ [0.5428869 ]
+ [0.5601765 ]
+ [0.5031883 ]
+ [0.5524244 ]
+ [0.5105648 ]
+ [0.5941416 ]
+ [0.47888806]
+ [0.5162187 ]
+ [0.53418005]
+ [0.49259457]]
+679/679 - 23s - loss: 0.6990 - accuracy: 0.5256 - val_loss: 0.6835 - val_accuracy: 0.5559 - 23s/epoch - 33ms/step
+Epoch 2/20
+679/679 - 18s - loss: 0.6831 - accuracy: 0.5597 - val_loss: 0.6923 - val_accuracy: 0.5141 - 18s/epoch - 27ms/step
+Epoch 3/20
+679/679 - 17s - loss: 0.6755 - accuracy: 0.5668 - val_loss: 0.6620 - val_accuracy: 0.5766 - 17s/epoch - 25ms/step
+Epoch 4/20
+679/679 - 21s - loss: 0.6630 - accuracy: 0.5747 - val_loss: 0.6581 - val_accuracy: 0.5786 - 21s/epoch - 31ms/step
+Epoch 5/20
+679/679 - 25s - loss: 0.6560 - accuracy: 0.5869 - val_loss: 0.6564 - val_accuracy: 0.5792 - 25s/epoch - 37ms/step
+Epoch 6/20
+679/679 - 19s - loss: 0.6561 - accuracy: 0.5885 - val_loss: 0.6517 - val_accuracy: 0.5790 - 19s/epoch - 27ms/step
+Epoch 7/20
+679/679 - 17s - loss: 0.6470 - accuracy: 0.5975 - val_loss: 0.6455 - val_accuracy: 0.6623 - 17s/epoch - 26ms/step
+Epoch 8/20
+679/679 - 18s - loss: 0.4438 - accuracy: 0.7575 - val_loss: 0.0249 - val_accuracy: 0.9998 - 18s/epoch - 26ms/step
+Epoch 9/20
+679/679 - 17s - loss: 0.0543 - accuracy: 0.9857 - val_loss: 0.0019 - val_accuracy: 1.0000 - 17s/epoch - 25ms/step
+Epoch 10/20
+679/679 - 18s - loss: 0.0366 - accuracy: 0.9909 - val_loss: 0.0014 - val_accuracy: 1.0000 - 18s/epoch - 27ms/step
+Epoch 11/20
+679/679 - 20s - loss: 0.0024 - accuracy: 0.9998 - val_loss: 2.4611e-04 - val_accuracy: 1.0000 - 20s/epoch - 29ms/step
+Epoch 12/20
+679/679 - 19s - loss: 0.0225 - accuracy: 0.9945 - val_loss: 4.2553e-04 - val_accuracy: 1.0000 - 19s/epoch - 27ms/step
+Epoch 13/20
+679/679 - 17s - loss: 0.0142 - accuracy: 0.9971 - val_loss: 2.8588e-04 - val_accuracy: 1.0000 - 17s/epoch - 26ms/step
+Epoch 14/20
+679/679 - 22s - loss: 0.0573 - accuracy: 0.9844 - val_loss: 3.2553e-04 - val_accuracy: 1.0000 - 22s/epoch - 33ms/step
+Epoch 15/20
+679/679 - 25s - loss: 0.0165 - accuracy: 0.9965 - val_loss: 2.8761e-04 - val_accuracy: 1.0000 - 25s/epoch - 37ms/step
+Epoch 16/20
+679/679 - 18s - loss: 0.0127 - accuracy: 0.9975 - val_loss: 8.3640e-04 - val_accuracy: 1.0000 - 18s/epoch - 27ms/step
+Epoch 17/20
+679/679 - 18s - loss: 0.0425 - accuracy: 0.9876 - val_loss: 0.0834 - val_accuracy: 0.9554 - 18s/epoch - 26ms/step
+Epoch 18/20
+679/679 - 17s - loss: 0.0356 - accuracy: 0.9894 - val_loss: 0.0081 - val_accuracy: 1.0000 - 17s/epoch - 25ms/step
+Epoch 19/20
+679/679 - 17s - loss: 0.0024 - accuracy: 0.9998 - val_loss: 9.2186e-05 - val_accuracy: 1.0000 - 17s/epoch - 25ms/step
+Epoch 20/20
+679/679 - 19s - loss: 0.0247 - accuracy: 0.9942 - val_loss: 8.6112e-05 - val_accuracy: 1.0000 - 19s/epoch - 29ms/step
+Inference on all the spots...
+144.0 in total
+Batch 0 processing...
+Batch 0 completed. Time taken: 00:00:19
+Batch 1 processing...
+Batch 1 completed. Time taken: 00:00:17
+Batch 2 processing...
+Batch 2 completed. Time taken: 00:00:22
+Batch 3 processing...
+Batch 3 completed. Time taken: 00:00:21
+Batch 4 processing...
+Batch 4 completed. Time taken: 00:00:18
+Batch 5 processing...
+Batch 5 completed. Time taken: 00:00:17
+Batch 6 processing...
+Batch 6 completed. Time taken: 00:00:17
+Batch 7 processing...
+Batch 7 completed. Time taken: 00:00:18
+Batch 8 processing...
+Batch 8 completed. Time taken: 00:00:18
+Batch 9 processing...
+Batch 9 completed. Time taken: 00:00:17
+Batch 10 processing...
+Batch 10 completed. Time taken: 00:00:22
+Batch 11 processing...
+Batch 11 completed. Time taken: 00:00:20
+Batch 12 processing...
+Batch 12 completed. Time taken: 00:00:19
+Batch 13 processing...
+Batch 13 completed. Time taken: 00:00:17
+Batch 14 processing...
+Batch 14 completed. Time taken: 00:00:17
+Batch 15 processing...
+Batch 15 completed. Time taken: 00:00:18
+Batch 16 processing...
+Batch 16 completed. Time taken: 00:00:20
+Batch 17 processing...
+Batch 17 completed. Time taken: 00:00:18
+Batch 18 processing...
+Batch 18 completed. Time taken: 00:00:19
+Batch 19 processing...
+Batch 19 completed. Time taken: 00:00:21
+Batch 20 processing...
+Batch 20 completed. Time taken: 00:00:19
+Batch 21 processing...
+Batch 21 completed. Time taken: 00:00:18
+Batch 22 processing...
+Batch 22 completed. Time taken: 00:00:18
+Batch 23 processing...
+Batch 23 completed. Time taken: 00:00:18
+Batch 24 processing...
+Batch 24 completed. Time taken: 00:00:18
+Batch 25 processing...
+Batch 25 completed. Time taken: 00:00:19
+Batch 26 processing...
+Batch 26 completed. Time taken: 00:00:18
+Batch 27 processing...
+Batch 27 completed. Time taken: 00:00:19
+Batch 28 processing...
+Batch 28 completed. Time taken: 00:00:19
+Batch 29 processing...
+Batch 29 completed. Time taken: 00:00:18
+Batch 30 processing...
+Batch 30 completed. Time taken: 00:00:18
+Batch 31 processing...
+Batch 31 completed. Time taken: 00:00:18
+Batch 32 processing...
+Batch 32 completed. Time taken: 00:00:18
+Batch 33 processing...
+Batch 33 completed. Time taken: 00:00:20
+Batch 34 processing...
+Batch 34 completed. Time taken: 00:00:20
+Batch 35 processing...
+Batch 35 completed. Time taken: 00:00:19
+Batch 36 processing...
+Batch 36 completed. Time taken: 00:00:18
+Batch 37 processing...
+Batch 37 completed. Time taken: 00:00:17
+Batch 38 processing...
+Batch 38 completed. Time taken: 00:00:19
+Batch 39 processing...
+Batch 39 completed. Time taken: 00:00:18
+Batch 40 processing...
+Batch 40 completed. Time taken: 00:00:18
+Batch 41 processing...
+Batch 41 completed. Time taken: 00:00:20
+Batch 42 processing...
+Batch 42 completed. Time taken: 00:00:21
+Batch 43 processing...
+Batch 43 completed. Time taken: 00:00:21
+Batch 44 processing...
+Batch 44 completed. Time taken: 00:00:18
+Batch 45 processing...
+Batch 45 completed. Time taken: 00:00:18
+Batch 46 processing...
+Batch 46 completed. Time taken: 00:00:19
+Batch 47 processing...
+Batch 47 completed. Time taken: 00:00:21
+Batch 48 processing...
+Batch 48 completed. Time taken: 00:00:19
+Batch 49 processing...
+Batch 49 completed. Time taken: 00:00:20
+Batch 50 processing...
+Batch 50 completed. Time taken: 00:00:22
+Batch 51 processing...
+Batch 51 completed. Time taken: 00:00:21
+Batch 52 processing...
+Batch 52 completed. Time taken: 00:00:19
+Batch 53 processing...
+Batch 53 completed. Time taken: 00:00:19
+Batch 54 processing...
+Batch 54 completed. Time taken: 00:00:18
+Batch 55 processing...
+Batch 55 completed. Time taken: 00:00:19
+Batch 56 processing...
+Batch 56 completed. Time taken: 00:00:19
+Batch 57 processing...
+Batch 57 completed. Time taken: 00:00:18
+Batch 58 processing...
+Batch 58 completed. Time taken: 00:00:21
+Batch 59 processing...
+Batch 59 completed. Time taken: 00:00:21
+Batch 60 processing...
+Batch 60 completed. Time taken: 00:00:20
+Batch 61 processing...
+Batch 61 completed. Time taken: 00:00:20
+Batch 62 processing...
+Batch 62 completed. Time taken: 00:00:19
+Batch 63 processing...
+Batch 63 completed. Time taken: 00:02:25
+Batch 64 processing...
+Batch 64 completed. Time taken: 00:00:19
+Batch 65 processing...
+Batch 65 completed. Time taken: 00:00:26
+Batch 66 processing...
+Batch 66 completed. Time taken: 00:00:23
+Batch 67 processing...
+Batch 67 completed. Time taken: 00:00:20
+Batch 68 processing...
+Batch 68 completed. Time taken: 00:00:20
+Batch 69 processing...
+Batch 69 completed. Time taken: 00:00:19
+Batch 70 processing...
+Batch 70 completed. Time taken: 00:00:21
+Batch 71 processing...
+Batch 71 completed. Time taken: 00:00:21
+Batch 72 processing...
+Batch 72 completed. Time taken: 00:00:19
+Batch 73 processing...
+Batch 73 completed. Time taken: 00:00:19
+Batch 74 processing...
+Batch 74 completed. Time taken: 00:00:23
+Batch 75 processing...
+Batch 75 completed. Time taken: 00:00:20
+Batch 76 processing...
+Batch 76 completed. Time taken: 00:00:20
+Batch 77 processing...
+Batch 77 completed. Time taken: 00:00:20
+Batch 78 processing...
+Batch 78 completed. Time taken: 00:02:13
+Batch 79 processing...
+Batch 79 completed. Time taken: 00:00:19
+Batch 80 processing...
+Batch 80 completed. Time taken: 00:00:23
+Batch 81 processing...
+Batch 81 completed. Time taken: 00:00:21
+Batch 82 processing...
+Batch 82 completed. Time taken: 00:00:20
+Batch 83 processing...
+Batch 83 completed. Time taken: 00:00:18
+Batch 84 processing...
+Batch 84 completed. Time taken: 00:00:19
+Batch 85 processing...
+Batch 85 completed. Time taken: 00:00:20
+Batch 86 processing...
+Batch 86 completed. Time taken: 00:00:19
+Batch 87 processing...
+Batch 87 completed. Time taken: 00:00:19
+Batch 88 processing...
+Batch 88 completed. Time taken: 00:00:21
+Batch 89 processing...
+Batch 89 completed. Time taken: 00:00:23
+Batch 90 processing...
+Batch 90 completed. Time taken: 00:00:21
+Batch 91 processing...
+Batch 91 completed. Time taken: 00:00:19
+Batch 92 processing...
+Batch 92 completed. Time taken: 00:00:19
+Batch 93 processing...
+Batch 93 completed. Time taken: 00:00:19
+Batch 94 processing...
+Batch 94 completed. Time taken: 00:00:22
+Batch 95 processing...
+Batch 95 completed. Time taken: 00:00:21
+Batch 96 processing...
+Batch 96 completed. Time taken: 00:00:21
+Batch 97 processing...
+Batch 97 completed. Time taken: 00:00:21
+Batch 98 processing...
+Batch 98 completed. Time taken: 00:00:24
+Batch 99 processing...
+Batch 99 completed. Time taken: 00:00:22
+Batch 100 processing...
+Batch 100 completed. Time taken: 00:00:22
+Batch 101 processing...
+Batch 101 completed. Time taken: 00:00:20
+Batch 102 processing...
+Batch 102 completed. Time taken: 00:00:21
+Batch 103 processing...
+Batch 103 completed. Time taken: 00:00:20
+Batch 104 processing...
+Batch 104 completed. Time taken: 00:00:22
+Batch 105 processing...
+Batch 105 completed. Time taken: 00:02:18
+Batch 106 processing...
+Batch 106 completed. Time taken: 00:00:26
+Batch 107 processing...
+Batch 107 completed. Time taken: 00:00:22
+Batch 108 processing...
+Batch 108 completed. Time taken: 00:00:21
+Batch 109 processing...
+Batch 109 completed. Time taken: 00:00:20
+Batch 110 processing...
+Batch 110 completed. Time taken: 00:00:21
+Batch 111 processing...
+Batch 111 completed. Time taken: 00:00:20
+Batch 112 processing...
+Batch 112 completed. Time taken: 00:00:23
+Batch 113 processing...
+Batch 113 completed. Time taken: 00:00:21
+Batch 114 processing...
+Batch 114 completed. Time taken: 00:00:20
+Batch 115 processing...
+Batch 115 completed. Time taken: 00:00:23
+Batch 116 processing...
+Batch 116 completed. Time taken: 00:00:26
+Batch 117 processing...
+Batch 117 completed. Time taken: 00:00:21
+Batch 118 processing...
+Batch 118 completed. Time taken: 00:00:21
+Batch 119 processing...
+Batch 119 completed. Time taken: 00:00:20
+Batch 120 processing...
+Batch 120 completed. Time taken: 00:00:21
+Batch 121 processing...
+Batch 121 completed. Time taken: 00:00:21
+Batch 122 processing...
+Batch 122 completed. Time taken: 00:00:22
+Batch 123 processing...
+Batch 123 completed. Time taken: 00:00:20
+Batch 124 processing...
+Batch 124 completed. Time taken: 00:00:21
+Batch 125 processing...
+Batch 125 completed. Time taken: 00:00:27
+Batch 126 processing...
+Batch 126 completed. Time taken: 00:00:25
+Batch 127 processing...
+Batch 127 completed. Time taken: 00:00:21
+Batch 128 processing...
+Batch 128 completed. Time taken: 00:00:20
+Batch 129 processing...
+Batch 129 completed. Time taken: 00:00:21
+Batch 130 processing...
+Batch 130 completed. Time taken: 00:00:22
+Batch 131 processing...
+Batch 131 completed. Time taken: 00:00:22
+Batch 132 processing...
+Batch 132 completed. Time taken: 00:00:22
+Batch 133 processing...
+Batch 133 completed. Time taken: 00:00:21
+Batch 134 processing...
+Batch 134 completed. Time taken: 00:00:25
+Batch 135 processing...
+Batch 135 completed. Time taken: 00:00:24
+Batch 136 processing...
+Batch 136 completed. Time taken: 00:00:22
+Batch 137 processing...
+Batch 137 completed. Time taken: 00:00:21
+Batch 138 processing...
+Batch 138 completed. Time taken: 00:00:20
+Batch 139 processing...
+Batch 139 completed. Time taken: 00:00:21
+Batch 140 processing...
+Batch 140 completed. Time taken: 00:00:23
+Batch 141 processing...
+Batch 141 completed. Time taken: 00:00:23
+Batch 142 processing...
+Batch 142 completed. Time taken: 00:00:21
+Batch 143 processing...
+Batch 143 completed. Time taken: 00:00:21
+Write prediction results...
+第二个脚本已完成运行
+Number of points above threshold: 118830
+Total number of points: 1440000
+Number of nuclei: 1117
+Number of zeros: 1321684
+Number of non-zeros: 118316
+第三个脚本已完成
+/mnt/md0/lei/projects/CellSegmentsation/CellSegmentation/minibatch/NEW_seg.py:15: RuntimeWarning: invalid value encountered in arccos
+  angle = np.arccos(dot_product)
+loading data
+
+calculating exp and centroids of nucleus
+
+executing field segmentation
+
+1.0 /144 batches completed!
+2.0 /144 batches completed!
+3.0 /144 batches completed!
+4.0 /144 batches completed!
+5.0 /144 batches completed!
+6.0 /144 batches completed!
+7.0 /144 batches completed!
+8.0 /144 batches completed!
+9.0 /144 batches completed!
+10.0 /144 batches completed!
+11.0 /144 batches completed!
+12.0 /144 batches completed!
+13.0 /144 batches completed!
+14.0 /144 batches completed!
+15.0 /144 batches completed!
+16.0 /144 batches completed!
+17.0 /144 batches completed!
+18.0 /144 batches completed!
+19.0 /144 batches completed!
+20.0 /144 batches completed!
+21.0 /144 batches completed!
+22.0 /144 batches completed!
+23.0 /144 batches completed!
+24.0 /144 batches completed!
+25.0 /144 batches completed!
+26.0 /144 batches completed!
+27.0 /144 batches completed!
+28.0 /144 batches completed!
+29.0 /144 batches completed!
+30.0 /144 batches completed!
+31.0 /144 batches completed!
+32.0 /144 batches completed!
+33.0 /144 batches completed!
+34.0 /144 batches completed!
+35.0 /144 batches completed!
+36.0 /144 batches completed!
+37.0 /144 batches completed!
+38.0 /144 batches completed!
+39.0 /144 batches completed!
+40.0 /144 batches completed!
+41.0 /144 batches completed!
+42.0 /144 batches completed!
+43.0 /144 batches completed!
+44.0 /144 batches completed!
+45.0 /144 batches completed!
+46.0 /144 batches completed!
+47.0 /144 batches completed!
+48.0 /144 batches completed!
+49.0 /144 batches completed!
+50.0 /144 batches completed!
+51.0 /144 batches completed!
+52.0 /144 batches completed!
+53.0 /144 batches completed!
+54.0 /144 batches completed!
+55.0 /144 batches completed!
+56.0 /144 batches completed!
+57.0 /144 batches completed!
+58.0 /144 batches completed!
+59.0 /144 batches completed!
+60.0 /144 batches completed!
+X:503.0	Y:1194.0	total:1.0770270165691185e-05	 sim:0.005138055222088836	 dis:0.002096176413088962
+61.0 /144 batches completed!
+62.0 /144 batches completed!
+63.0 /144 batches completed!
+64.0 /144 batches completed!
+65.0 /144 batches completed!
+X:541.0	Y:1187.0	total:1.0869983812481133e-05	 sim:0.0033133253301320525	 dis:0.003280687143404632
+66.0 /144 batches completed!
+67.0 /144 batches completed!
+68.0 /144 batches completed!
+69.0 /144 batches completed!
+70.0 /144 batches completed!
+71.0 /144 batches completed!
+72.0 /144 batches completed!
+73.0 /144 batches completed!
+74.0 /144 batches completed!
+75.0 /144 batches completed!
+76.0 /144 batches completed!
+77.0 /144 batches completed!
+78.0 /144 batches completed!
+79.0 /144 batches completed!
+80.0 /144 batches completed!
+81.0 /144 batches completed!
+82.0 /144 batches completed!
+83.0 /144 batches completed!
+84.0 /144 batches completed!
+85.0 /144 batches completed!
+86.0 /144 batches completed!
+87.0 /144 batches completed!
+88.0 /144 batches completed!
+89.0 /144 batches completed!
+90.0 /144 batches completed!
+91.0 /144 batches completed!
+92.0 /144 batches completed!
+93.0 /144 batches completed!
+94.0 /144 batches completed!
+95.0 /144 batches completed!
+96.0 /144 batches completed!
+97.0 /144 batches completed!
+98.0 /144 batches completed!
+99.0 /144 batches completed!
+100.0 /144 batches completed!
+101.0 /144 batches completed!
+102.0 /144 batches completed!
+103.0 /144 batches completed!
+104.0 /144 batches completed!
+105.0 /144 batches completed!
+106.0 /144 batches completed!
+107.0 /144 batches completed!
+108.0 /144 batches completed!
+109.0 /144 batches completed!
+110.0 /144 batches completed!
+111.0 /144 batches completed!
+112.0 /144 batches completed!
+113.0 /144 batches completed!
+114.0 /144 batches completed!
+115.0 /144 batches completed!
+116.0 /144 batches completed!
+117.0 /144 batches completed!
+118.0 /144 batches completed!
+119.0 /144 batches completed!
+120.0 /144 batches completed!
+121.0 /144 batches completed!
+122.0 /144 batches completed!
+123.0 /144 batches completed!
+124.0 /144 batches completed!
+125.0 /144 batches completed!
+126.0 /144 batches completed!
+127.0 /144 batches completed!
+128.0 /144 batches completed!
+129.0 /144 batches completed!
+130.0 /144 batches completed!
+131.0 /144 batches completed!
+132.0 /144 batches completed!
+133.0 /144 batches completed!
+134.0 /144 batches completed!
+135.0 /144 batches completed!
+136.0 /144 batches completed!
+137.0 /144 batches completed!
+138.0 /144 batches completed!
+139.0 /144 batches completed!
+140.0 /144 batches completed!
+141.0 /144 batches completed!
+142.0 /144 batches completed!
+143.0 /144 batches completed!
+144.0 /144 batches completed!
+drawing figures
+
+Average size: 661.3545210384959
+Std: 315.790570664708
+第四个脚本已完成

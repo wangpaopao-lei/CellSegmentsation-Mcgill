@@ -1,0 +1,29 @@
+2024-03-13 06:30:30.491773: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-13 06:30:30.491820: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spaghetti/network.py:40: FutureWarning:
+
+The next major release of pysal/spaghetti (2.0.0) will drop support for all ``libpysal.cg`` geometries. This change is a first step in refactoring ``spaghetti`` that is expected to result in dramatically reduced runtimes for network instantiation and operations. Users currently requiring network and point pattern input as ``libpysal.cg`` geometries should prepare for this simply by converting to ``shapely`` geometries.
+
+2024-03-13 06:30:36.045734: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-13 06:30:36.046085: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-13 06:30:36.046371: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-13 06:30:36.046646: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-13 06:30:36.046919: I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:936] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+2024-03-13 06:30:36.047313: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-13 06:30:36.047434: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublas.so.11'; dlerror: libcublas.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-13 06:30:36.047533: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcublasLt.so.11'; dlerror: libcublasLt.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-13 06:30:36.047633: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcufft.so.10'; dlerror: libcufft.so.10: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-13 06:30:36.049394: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcusparse.so.11'; dlerror: libcusparse.so.11: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-13 06:30:36.049440: W tensorflow/core/common_runtime/gpu/gpu_device.cc:1850] Cannot dlopen some GPU libraries. Please make sure the missing libraries mentioned above are installed properly if you would like to use GPU. Follow the guide at https://www.tensorflow.org/install/gpu for how to download and setup the required libraries for your platform.
+Skipping registering GPU devices...
+2024-03-13 06:30:36.049972: I tensorflow/core/platform/cpu_feature_guard.cc:151] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX2 FMA
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/ot/backend.py:2998: UserWarning:
+
+To use TensorflowBackend, you need to activate the tensorflow numpy API. You can activate it by running: 
+from tensorflow.python.ops.numpy_ops import np_config
+np_config.enable_numpy_behavior()
+
+usage: 1_preprocess.py [-h] [-p PATCH PATCH PATCH PATCH]
+1_preprocess.py: error: unrecognized arguments: -n 800 0 1200 400
+done!

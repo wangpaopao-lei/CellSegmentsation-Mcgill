@@ -1,0 +1,56 @@
+2024-03-13 05:31:51.576230: W tensorflow/stream_executor/platform/default/dso_loader.cc:64] Could not load dynamic library 'libcudart.so.11.0'; dlerror: libcudart.so.11.0: cannot open shared object file: No such file or directory; LD_LIBRARY_PATH: /home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/cv2/../../lib64:/usr/local/cuda-12.1/lib64:
+2024-03-13 05:31:51.576270: I tensorflow/stream_executor/cuda/cudart_stub.cc:29] Ignore above cudart dlerror if you do not have a GPU set up on your machine.
+Traceback (most recent call last):
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/requests/compat.py", line 11, in <module>
+    import chardet
+ModuleNotFoundError: No module named 'chardet'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/mnt/md0/lei/projects/CellSegmentsation/CellSegmentation/src/1_preprocess.py", line 7, in <module>
+    import spateo as st
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spateo/__init__.py", line 9, in <module>
+    from . import cs, dd, io, pl, pp, sample_data, tdr, tl
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spateo/pl.py", line 1, in <module>
+    from .plotting import *
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spateo/plotting/__init__.py", line 4, in <module>
+    from .interactive import *
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spateo/plotting/interactive/__init__.py", line 1, in <module>
+    from .agg import contours, select_polygon
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spateo/plotting/interactive/agg.py", line 19, in <module>
+    from ..static import imshow
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spateo/plotting/static/__init__.py", line 4, in <module>
+    from .align import multi_slices
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spateo/plotting/static/align.py", line 15, in <module>
+    from ...tools.cluster.utils import integrate, to_dense_matrix
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spateo/tools/__init__.py", line 38, in <module>
+    from .lisa import GM_lag_model, lisa_geo_df, local_moran_i
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/spateo/tools/lisa.py", line 15, in <module>
+    from pysal import explore
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/pysal/explore/__init__.py", line 1, in <module>
+    import esda
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/esda/__init__.py", line 6, in <module>
+    from . import adbscan
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/esda/adbscan.py", line 10, in <module>
+    from libpysal.cg.alpha_shapes import alpha_shape_auto
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/libpysal/__init__.py", line 26, in <module>
+    from . import examples
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/libpysal/examples/__init__.py", line 11, in <module>
+    from .base import example_manager
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/libpysal/examples/base.py", line 13, in <module>
+    import requests
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/requests/__init__.py", line 45, in <module>
+    from .exceptions import RequestsDependencyWarning
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/requests/exceptions.py", line 9, in <module>
+    from .compat import JSONDecodeError as CompatJSONDecodeError
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/requests/compat.py", line 13, in <module>
+    import charset_normalizer as chardet
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/charset_normalizer/__init__.py", line 24, in <module>
+    from .api import from_bytes, from_fp, from_path, is_binary
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/charset_normalizer/api.py", line 5, in <module>
+    from .cd import (
+  File "/home/lei/miniconda3/envs/CS/lib/python3.9/site-packages/charset_normalizer/cd.py", line 14, in <module>
+    from .md import is_suspiciously_successive_range
+AttributeError: partially initialized module 'charset_normalizer' has no attribute 'md__mypyc' (most likely due to a circular import)
+done!
