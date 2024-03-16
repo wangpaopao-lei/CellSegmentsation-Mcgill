@@ -1,0 +1,2 @@
+/home/lei/miniconda3/envs/CS/bin/python: can't open file '/mnt/md0/lei/projects/CellSegmentsation/CellSegmentation/src/NEW_seg.py': [Errno 2] No such file or directory
+./seg.sh: 3: Syntax error: Unterminated quoted string
